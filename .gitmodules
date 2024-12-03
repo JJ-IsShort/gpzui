@@ -1,0 +1,12 @@
+[submodule "ext/zglfw"]
+	path = ext/zglfw
+	url = https://github.com/zig-gamedev/zglfw.git
+[submodule "ext/zgpu"]
+	path = ext/zgpu
+	url = https://github.com/zig-gamedev/zgpu.git
+[submodule "ext/webgpu_dawn/dawn"]
+	path = ext/webgpu_dawn/dawn
+	url = https://dawn.googlesource.com/dawn
+[submodule "ext/zmath"]
+	path = ext/zmath
+	url = https://github.com/zig-gamedev/zmath.git

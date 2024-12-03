@@ -1,0 +1,42 @@
+run
++- run gpzui
+   +- install
+      +- install gpzui
+         +- zig build-exe gpzui Debug native 7 errors
+error: ld.lld: 
+error: ld.lld: undefined symbol: std::__throw_system_error(int)
+    note: referenced by astcenc_entry.cpp
+    note:               astcenc_entry.o:(std::mutex::lock()) in archive /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbimgDebug.a
+    note: referenced by astcenc_entry.cpp
+    note:               astcenc_entry.o:(std::unique_lock<std::mutex>::unlock()) in archive /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbimgDebug.a
+    note: referenced by astcenc_entry.cpp
+    note:               astcenc_entry.o:(std::unique_lock<std::mutex>::lock()) in archive /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbimgDebug.a
+    note: referenced 1 more times
+error: ld.lld: undefined symbol: std::condition_variable::condition_variable()
+    note: referenced by astcenc_entry.cpp
+    note:               astcenc_entry.o:(ParallelManager::ParallelManager()) in archive /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbimgDebug.a
+error: ld.lld: undefined symbol: std::condition_variable::notify_all()
+    note: referenced by astcenc_entry.cpp
+    note:               astcenc_entry.o:(ParallelManager::complete_task_assignment(unsigned int)) in archive /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbimgDebug.a
+error: ld.lld: undefined symbol: std::condition_variable::~condition_variable()
+    note: referenced by astcenc_entry.cpp
+    note:               astcenc_entry.o:(ParallelManager::~ParallelManager()) in archive /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbimgDebug.a
+error: ld.lld: undefined symbol: std::__throw_bad_function_call()
+    note: referenced by astcenc_entry.cpp
+    note:               astcenc_entry.o:(std::function<unsigned int ()>::operator()() const) in archive /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbimgDebug.a
+    note: referenced by astcenc_entry.cpp
+    note:               astcenc_entry.o:(std::function<void ()>::operator()() const) in archive /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbimgDebug.a
+error: ld.lld: undefined symbol: std::condition_variable::wait(std::unique_lock<std::mutex>&)
+    note: referenced by astcenc_entry.cpp
+    note:               astcenc_entry.o:(void std::condition_variable::wait<ParallelManager::wait()::'lambda'()>(std::unique_lock<std::mutex>&, ParallelManager::wait()::'lambda'())) in archive /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbimgDebug.a
+error: the following command failed with 7 compilation errors:
+/home/arson/zig/0.14.0-dev.2310+b0dcce93f/files/zig build-exe /home/arson/Documents/coding_projects/gpzui/.zig-cache/o/67a3418adf9cb2433661df3200aa02df/libglfw.a /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbgfxDebug.a /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbimgDebug.a /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbimg_decodeDebug.a /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbimg_encodeDebug.a /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libbxDebug.a /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libglsl-optimizerDebug.a /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libglslangDebug.a /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libspirv-crossDebug.a /home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/.build/linux64_gcc/bin/libspirv-optDebug.a -ODebug -I /home/arson/Documents/coding_projects/gpzui/.zig-cache/o/f5a2315ec00bc9abd038aeb22d93fc2c --dep zglfw --dep bgfx --dep zmath -Mroot=/home/arson/Documents/coding_projects/gpzui/src/main.zig -I /home/arson/Documents/coding_projects/gpzui/ext/zglfw/libs/glfw/include -isystem /home/arson/.cache/zig/p/122047a9298c4c9dd43389d418d6826d469b192246ba0944102964cdc57f94c562df/linux/include --dep zglfw_options -Mzglfw=/home/arson/Documents/coding_projects/gpzui/ext/zglfw/src/zglfw.zig -Mbgfx=/home/arson/Documents/coding_projects/gpzui/ext/bgfx/bgfx/bindings/zig/bgfx.zig --dep zmath_options -Mzmath=/home/arson/Documents/coding_projects/gpzui/ext/zmath/src/main.zig -lX11 -Mzglfw_options=/home/arson/Documents/coding_projects/gpzui/.zig-cache/c/146ca2d85916994793a7b14e89af72ac/options.zig -Mzmath_options=/home/arson/Documents/coding_projects/gpzui/.zig-cache/c/5645c02bfc8015db281cbd2ca159b260/options.zig -lc++ -lc --cache-dir /home/arson/Documents/coding_projects/gpzui/.zig-cache --global-cache-dir /home/arson/.cache/zig --name gpzui --zig-lib-dir /home/arson/zig/0.14.0-dev.2310+b0dcce93f/files/lib/ --listen=- 
+Build Summary: 6/11 steps succeeded; 1 failed
+run transitive failure
++- run gpzui transitive failure
+   +- zig build-exe gpzui Debug native 7 errors
+   +- install transitive failure
+      +- install gpzui transitive failure
+         +- zig build-exe gpzui Debug native (+4 more reused dependencies)
+error: the following build command failed with exit code 1:
+/home/arson/Documents/coding_projects/gpzui/.zig-cache/o/3107b52c21224be78073625909ac14f5/build /home/arson/zig/0.14.0-dev.2310+b0dcce93f/files/zig /home/arson/zig/0.14.0-dev.2310+b0dcce93f/files/lib /home/arson/Documents/coding_projects/gpzui /home/arson/Documents/coding_projects/gpzui/.zig-cache /home/arson/.cache/zig --seed 0x864bc881 -Zf1fc846bb01d456e run
